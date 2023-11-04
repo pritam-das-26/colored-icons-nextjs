@@ -7,11 +7,9 @@ export default function Home() {
   
   return (
     <>
-      
-        <Nav /> {/* Use the component with an uppercase letter */}
+        <Nav /> 
         <Header/>
-        <Display />
-       
+        <Display />     
     </>
   );
 }

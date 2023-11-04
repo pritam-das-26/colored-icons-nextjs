@@ -29,8 +29,9 @@ function Nav() {
   }
 
   return (
-    <div className="flex-col">
-      <div className="flex h-1 justify-between">
+
+    <div className="flex-col  justify-center item-center transition-shadow bg-white z-40 fixed top-0 w-full h-12 shadow-sm scroll-snap-start">
+      <div className="flex h-1 w-100% justify-between">
         <div className="bg-blue-400 w-96"></div>
         <div className="bg-purple-900 w-48"></div>
         <div className="bg-rose-500 w-72 "></div>
@@ -38,7 +39,8 @@ function Nav() {
         <div className="bg-green-600 w-96"></div>
       </div>
 
-      <div className="flex mt-2 h-16 justify-between">
+      <div className="flex mt-2 h-4 space-between">
+       
         <aside className="">
           <h1 className="font-dancing-script text-xl md:text-4xl font-bold md:mt-2">
             Colored Icons
@@ -60,11 +62,10 @@ function Nav() {
           {visInstall && <Install  onMouseLeave={unhover} />}
         </div>
 
-        <div className="">
-          <button onClick={() => click()}>
-            <MagnifyingGlassIcon className="h-4 md:h-10  w-4 md:w-10 " />
+      
+          <button className="" onClick={() => click()}>
+            <MagnifyingGlassIcon className="h-6" />
           </button>
-        </div>
 
         <div className="flex-none">
           {visible && <Example onClose={closeModal} />}
