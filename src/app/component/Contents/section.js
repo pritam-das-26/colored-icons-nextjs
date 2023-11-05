@@ -31,49 +31,50 @@ function Display() {
   }
 
   function modify(category) {
-    const filteredLogos = logos.filter((logo) => logo.category.toUpperCase() === category.toUpperCase());
+    const filteredLogos = logos.filter(
+      (logo) => logo.category.toUpperCase() === category.toUpperCase()
+    );
     setArr(filteredLogos);
   }
 
   return (
-    <div className="mt-4 flex flex-col justify-center items-center ">
-      <div className="w-48 mt-4">
-        <h1 className="font-semibold text-2xl">
-          Most Popular Brand Categories
-        </h1>
-        <div className=" items-center  ">
-          <div className=" justify-between items-center h-20 rounded-md">
-            <div className="relative mt-1">
-              <div
-                className="cursor-pointer select-none  pl-3 pr-9 text-gray-900 absolute mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
-                onClick={() => handleClick2(category)}
-              >
-                <div className="flex items-center">
-                  <span className="ml-3">{query}</span>
-                </div>
-              </div>
-
-              <div className="absolute inset-y-0 right-0 flex w-96 items-center rounded-r-md px-2 focus:outline-none"></div>
-              {isVisible && (
-                <div className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                  {category.map((category) => (
-                    <div
-                      key={category}
-                      className="relative cursor-pointer select-none py-2 pl-3 pr-9 text-gray-900 hover:bg-gray-500 hover:text-white"
-                      onClick={() => handleClick2(category)
-                      }
-                      onClickCapture={()=> modify(category)}
-                    >
-                      <div className="flex items-center">
-                        <span className="ml-3">{category}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
+    <div className="mt-4 flex flex-col justify-center items-center w-full">
+      
+        <div className="w-48 ">
+          <h1 className="font-semibold w-48 text-4xl">
+            Most Popular Brand Categories
+          </h1>
         </div>
+
+        <div className=" justify-center items-center w-3/4 rounded-md">
+          <div className="relative mt-1">
+            <div
+              className="cursor-pointer select-none  pl-3 pr-9 text-gray-900 absolute mt-1 h-12 w-full overflow-auto rounded-md bg-white py-1 text-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+              onClick={() => handleClick2(category)}
+            >
+              <div className="flex items-center p-1">
+                <span className="ml-3">{query}</span>
+              </div>
+            </div>
+
+            <div className="absolute inset-y-0 right-0 flex w-full items-center rounded-r-md px-2 focus:outline-none"></div>
+            {isVisible && (
+              <div className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                {category.map((category) => (
+                  <div
+                    key={category}
+                    className="relative cursor-pointer select-none py-2 pl-3 pr-9 text-gray-900 hover:bg-gray-500 hover:text-white"
+                    onClick={() => handleClick2(category)}
+                    onClickCapture={() => modify(category)}
+                  >
+                    <div className="flex items-center">
+                      <span className="ml-3">{category}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
       </div>
 
       <div className="mt-8 hidden justify-center gap-8  md:flex">
@@ -113,12 +114,12 @@ function Display() {
         </div>
       </div>
 
-      <div>
-        <ul className=" rounded-md  grid grid-cols-1 h-96 overflow-hidden hover:overflow-y-auto mt-8 gap-y-12 ">
+      <div className="mt-16">
+        <ul className=" rounded-md  grid grid-cols-1 h-96 overflow-hidden hover:overflow-y-auto mt-8 gap-y-2 ">
           {arr.map((logo) => (
             <li
               key={logo.name}
-              className="rounded-md border-2 h-20 w-48 hover:border-blue-500 hover:cursor-pointer flex p-2 gap-4 items-center"
+              className="rounded-md border-2 h-20 w-full hover:border-blue-500 hover:cursor-pointer flex p-2 gap-2 items-center"
               onClick={() => handleClick(logo)}
             >
               <i className={`${logo.class}  ci-3x`}></i>
