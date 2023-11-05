@@ -46,7 +46,7 @@ function Display() {
           </h1>
         </div>
 
-        <div className=" justify-center items-center w-3/4 rounded-md">
+        <div className=" justify-center items-center w-3/4 rounded-md mt-8">
           <div className="relative mt-1">
             <div
               className="cursor-pointer select-none  pl-3 pr-9 text-gray-900 absolute mt-1 h-12 w-full overflow-auto rounded-md bg-white py-1 text-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
@@ -114,8 +114,8 @@ function Display() {
         </div>
       </div>
 
-      <div className="mt-16">
-        <ul className=" rounded-md  grid grid-cols-1 h-96 overflow-hidden hover:overflow-y-auto mt-8 gap-y-2 ">
+      <div className="mt-16 w-3/4 mb-8">
+        <ul className=" rounded-md  grid grid-cols-1  overflow-hidden hover:overflow-y-auto mt-8 gap-y-2 ">
           {arr.map((logo) => (
             <li
               key={logo.name}
