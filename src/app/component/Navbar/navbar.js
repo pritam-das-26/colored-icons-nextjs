@@ -1,5 +1,5 @@
-"use client"
-import { useState } from "react";
+"use client";
+import { useState,useEffect } from "react";
 import Example from "../modals/modal3";
 import {
   ChevronDownIcon,
@@ -8,7 +8,10 @@ import {
 
 import Install from "../modals/installation";
 
-function Nav() {
+// Import statements...
+
+function ScrollableHeader() {
+  const [hasScrolled, setHasScrolled] = useState(false);
   const [visible, setVisible] = useState(false);
   const [visInstall, setVisInstall] = useState(false);
 
@@ -28,9 +31,31 @@ function Nav() {
     setVisInstall(false);
   }
 
-  return (
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const scrollThreshold = 100;
 
-    <div className="flex-col  justify-center item-center transition-shadow bg-white z-40 fixed top-0 w-full h-12 shadow-sm scroll-snap-start">
+      if (scrollY > scrollThreshold) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const headerClasses = `flex-col justify-center items-center bg-white z-40 fixed top-0 w-full h-12 ${
+    hasScrolled ? 'shadow-lg' : ''
+  }`;
+
+  return (
+    <div className={headerClasses}>
       <div className="flex h-1 w-100% justify-between">
         <div className="bg-blue-400 w-96"></div>
         <div className="bg-purple-900 w-48"></div>
@@ -39,10 +64,9 @@ function Nav() {
         <div className="bg-green-600 w-96"></div>
       </div>
 
-      <div className="flex mt-2 h-4 space-between">
-       
-        <aside className="">
-          <h1 className="font-dancing-script text-xl md:text-4xl font-bold md:mt-2">
+      <div className="flex p-2 h-4 md:h8 w-100% justify-between">
+        <aside>
+          <h1 className="font-dancing-script text-xl md:text-4xl font-bold ml-2 md:mt-2 ">
             Colored Icons
           </h1>
         </aside>
@@ -53,24 +77,32 @@ function Nav() {
             <div
               className="flex w-96 hover:text-blue-400 cursor-pointer"
               onMouseEnter={hover}
-             
             >
               <li>Installation</li>
               <ChevronDownIcon className="h-8 w-6" />
             </div>
           </ul>
-          {visInstall && <Install  onMouseLeave={unhover} />}
+          {visInstall && <Install onMouseLeave={unhover} />}
         </div>
 
-      
-          <button className="" onClick={() => click()}>
-            <MagnifyingGlassIcon className="h-6" />
-          </button>
+        <button className="p-2" onClick={() => click()}>
+          <MagnifyingGlassIcon className="h-5 text-gray-500" />
+        </button>
 
         <div className="flex-none">
           {visible && <Example onClose={closeModal} />}
         </div>
       </div>
+    </div>
+  );
+}
+
+function Nav() {
+  
+
+  return (
+    <div>
+      <ScrollableHeader />
     </div>
   );
 }

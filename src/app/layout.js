@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
        {/* Link to external stylesheet for colored icons */}
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.6.1/ci.min.css"
+          href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@master/ci.min.css"
         />
       </head>
        {/* Render the children (content) */}

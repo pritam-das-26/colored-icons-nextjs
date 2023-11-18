@@ -16,9 +16,9 @@ function Header() {
   }
 
   return (
-    <div className="flex flex-col mt-28  w-full items-center justify-center">
+    <div className="flex flex-col mt-20  w-full items-center justify-center">
       <div className=" w-full flex flex-col items-center justify-center p-4 ">
-        <span className="font-sans text-center font-bold text-4xl ">
+        <span className="font-sans text-center font-bold text-4xl  ">
           All Icons.
         </span>
         <span className="font-sans text-center font-bold text-4xl">
@@ -34,20 +34,21 @@ function Header() {
         </p>
       </div>
 
-      <div className="p-4 w-full h-28 flex-1 mt-8">
+      <div className="p-4 w-full flex-1 ">
         <div className="relative">
           <input
             onClick={() => click()}
-            className="w-full h-12 rounded-full border-blue-500 border-4 pl-12"
+            className="w-full h-14 rounded-full border-blue-500 border-4 pl-16"
             type="text"
             placeholder="Search any icon"
           />
-          <MagnifyingGlassIcon className="absolute h-6 left-3 top-3 text-gray-400" />
+          <MagnifyingGlassIcon className="absolute h-6 left-6 top-4 text-gray-400" />
+          <div className="absolute h-6 right-4 top-4 text-gray-300 font-sans font-normal text-base whitespace-nowrap">Ctrl K</div>
         </div>
       </div>
 
-      <a href="#" target="_blank">
-        <div className="bg-gray-100 shadow-md text-gray-400 transition duration-150 ease-in-out rounded-full gap-3 justify-center px-6 inline-flex items-center text-center cursor-pointer mx-auto h-10">
+      <a href="#" target="_blank" className="mt-4">
+        <div className="bg-gray-100 shadow-md text-gray-400 transition  rounded-full gap-3 justify-center px-6 inline-flex items-center text-center cursor-pointer mx-auto h-10">
           <p>
             <span className="font-light text-sm opacity-100 leading-6">
               &#128079;
