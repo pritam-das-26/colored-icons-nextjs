@@ -4,6 +4,9 @@ import { useState } from "react";
 import logoToEmail from "../../utils/logoToEmail";
 import LogoModal from "../modals/modal2";
 import category from "../../utils/category";
+import {
+  ChevronDownIcon,
+} from "@heroicons/react/24/solid";
 function Display() {
   const [visible, setVisible] = useState(false);
   const [selectedLogo, setSelectedLogo] = useState(null);
@@ -38,22 +41,27 @@ function Display() {
   }
 
   return (
-    <div className="mt-4 flex flex-col justify-center items-center w-full">
+    <div className="mt-8 flex flex-col justify-center items-center w-full ">
       
-        <div className="w-48 ">
-          <h1 className="font-semibold w-48 text-4xl">
-            Most Popular Brand Categories
-          </h1>
-        </div>
+     
+         
 
-        <div className=" justify-center items-center w-3/4 rounded-md mt-8">
-          <div className="relative mt-1">
+        <div className="w-3/4 rounded-md mt-12">
+         
+         <h3 className="font-bold text-4xl leading-tight ">
+            Most Popular
+            <br/>
+            Brand Categories
+          </h3>
+        
+          <div className="relative mt-12">
             <div
-              className="cursor-pointer select-none  pl-3 pr-9 text-gray-900 absolute mt-1 h-12 w-full overflow-auto rounded-md bg-white py-1 text-lg shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+              className="cursor-pointer select-none text-sm  p-2 text-gray-900 absolute mt-1 h-12 w-full  rounded-md bg-white overflow-hidden ring-1 ring-black ring-opacity-5 focus:outline-none "
               onClick={() => handleClick2(category)}
             >
-              <div className="flex items-center p-1">
+              <div className="flex items-center p-1 ">
                 <span className="ml-3">{query}</span>
+                <ChevronDownIcon className="h-6 w-4 absolute right-4 text-gray-400 text-sm" />
               </div>
             </div>
 
@@ -114,20 +122,20 @@ function Display() {
         </div>
       </div>
 
-      <div className="mt-16 w-3/4 mb-8">
-        <ul className=" rounded-md  grid grid-cols-1  overflow-hidden hover:overflow-y-auto mt-8 gap-y-2 ">
+      <div className="mt-12 w-3/4 mb-8">
+        <ul className=" rounded-md  grid grid-cols-1  overflow-hidden hover:overflow-y-auto mt-8 gap-y-3 ">
           {arr.map((logo) => (
             <li
               key={logo.name}
-              className="rounded-md border-2 h-20 w-full hover:border-blue-500 hover:cursor-pointer flex p-2 gap-2 items-center"
+              className="rounded-md border-2 h-20 w-full hover:border-blue-500 hover:cursor-pointer flex p-5 gap-2 items-center"
               onClick={() => handleClick(logo)}
             >
               <i className={`${logo.class}  ci-3x`}></i>
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-center p-4">
                 <div className="text-black text-base font-bold">
                   {logo.name}
                 </div>
-                <div className=" text-base text-gray-500">
+                <div className=" text-xs text-gray-400">
                   {logoToEmail(logo.name)}
                 </div>
               </div>

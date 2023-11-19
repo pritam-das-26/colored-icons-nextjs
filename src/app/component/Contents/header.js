@@ -17,7 +17,13 @@ function Header() {
 
   return (
     <div className="flex flex-col mt-20  w-full items-center justify-center">
+    
+       
+       
+
+
       <div className=" w-full flex flex-col items-center justify-center p-4 ">
+         <img src=""/>
         <span className="font-sans text-center font-bold text-4xl  ">
           All Icons.
         </span>
