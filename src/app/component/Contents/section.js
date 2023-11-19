@@ -4,6 +4,7 @@ import { useState } from "react";
 import logoToEmail from "../../utils/logoToEmail";
 import LogoModal from "../modals/modal2";
 import category from "../../utils/category";
+
 import {
   ChevronDownIcon,
 } from "@heroicons/react/24/solid";

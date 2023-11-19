@@ -1,9 +1,9 @@
 "use client";
 import Example from "../modals/modal3";
 import { useState } from "react";
+import Image from "next/image";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
-
 function Header() {
   const [visible, setVisible] = useState(false);
 
@@ -16,14 +16,13 @@ function Header() {
   }
 
   return (
-    <div className="flex flex-col mt-20  w-full items-center justify-center">
-    
-       
-       
+    <div className="flex flex-col mt-20  w-full items-center justify-center ">
+      <div className=" w-full flex flex-col items-center justify-center p-4 relative">
+        <div class="bg-green-500 transform -rotate-6 absolute h-24 w-24 -right-5 overflow-hidden "></div>
+        <div class="bg-pink-500 transform -rotate-6 absolute h-24 w-24 top-96 -left-8 -z-10  overflow-hidden"></div>
+        <div class="bg-blue-500 transform -rotate-6 absolute h-24 w-24 -left-4 top-20 rounded-full -z-10 overflow-hidden"></div>
+        <div class="bg-yellow-300 transform  absolute h-48 w-48 top-96 -right-16 rounded-full -z-10 overflow-hidden"></div>
 
-
-      <div className=" w-full flex flex-col items-center justify-center p-4 ">
-         <img src=""/>
         <span className="font-sans text-center font-bold text-4xl  ">
           All Icons.
         </span>
@@ -49,7 +48,9 @@ function Header() {
             placeholder="Search any icon"
           />
           <MagnifyingGlassIcon className="absolute h-6 left-6 top-4 text-gray-400" />
-          <div className="absolute h-6 right-4 top-4 text-gray-300 font-sans font-normal text-base whitespace-nowrap">Ctrl K</div>
+          <div className="absolute h-6 right-4 top-4 text-gray-300 font-sans font-normal text-base whitespace-nowrap">
+            Ctrl K
+          </div>
         </div>
       </div>
 
