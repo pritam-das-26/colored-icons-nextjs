@@ -64,7 +64,7 @@ function ScrollableHeader() {
         <div className="bg-green-600 w-96"></div>
       </div>
 
-      <div className="flex p-2 h-4 md:h8 w-100% justify-between">
+      <div className="flex p-2 h-8 md:h-16 w-100% justify-between">
         <aside>
           <h1 className="font-dancing-script text-xl md:text-4xl font-bold ml-2 md:mt-2 ">
             Colored Icons
@@ -85,8 +85,8 @@ function ScrollableHeader() {
           {visInstall && <Install onMouseLeave={unhover} />}
         </div>
 
-        <button className="p-2" onClick={() => click()}>
-          <MagnifyingGlassIcon className="h-5 text-gray-500" />
+        <button className="" onClick={() => click()}>
+          <MagnifyingGlassIcon className="h-4 mt-1 text-gray-500" />
         </button>
 
         <div className="flex-none">

@@ -5,9 +5,7 @@ import logoToEmail from "../../utils/logoToEmail";
 import LogoModal from "../modals/modal2";
 import category from "../../utils/category";
 
-import {
-  ChevronDownIcon,
-} from "@heroicons/react/24/solid";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 function Display() {
   const [visible, setVisible] = useState(false);
   const [selectedLogo, setSelectedLogo] = useState(null);
@@ -43,47 +41,42 @@ function Display() {
 
   return (
     <div className="mt-8 flex flex-col justify-center items-center w-full ">
-      
-     
-         
+      <div className="w-3/4 rounded-md mt-12">
+        <h3 className="font-bold text-4xl leading-tight ">
+          Most Popular
+          <br />
+          Brand Categories
+        </h3>
 
-        <div className="w-3/4 rounded-md mt-12">
-         
-         <h3 className="font-bold text-4xl leading-tight ">
-            Most Popular
-            <br/>
-            Brand Categories
-          </h3>
-        
-          <div className="relative mt-12">
-            <div
-              className="cursor-pointer select-none text-sm  p-2 text-gray-900 absolute mt-1 h-12 w-full  rounded-md bg-white overflow-hidden ring-1 ring-black ring-opacity-5 focus:outline-none "
-              onClick={() => handleClick2(category)}
-            >
-              <div className="flex items-center p-1 ">
-                <span className="ml-3">{query}</span>
-                <ChevronDownIcon className="h-6 w-4 absolute right-4 text-gray-400 text-sm" />
-              </div>
+        <div className="relative mt-12">
+          <div
+            className="cursor-pointer select-none text-sm  p-2 text-gray-900 absolute mt-1 h-12 w-full  rounded-md bg-white overflow-hidden ring-1 ring-black ring-opacity-5 focus:outline-none "
+            onClick={() => handleClick2(category)}
+          >
+            <div className="flex items-center p-1 ">
+              <span className="ml-3">{query}</span>
+              <ChevronDownIcon className="h-6 w-4 absolute right-4 text-gray-400 text-sm" />
             </div>
-
-            <div className="absolute inset-y-0 right-0 flex w-full items-center rounded-r-md px-2 focus:outline-none"></div>
-            {isVisible && (
-              <div className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                {category.map((category) => (
-                  <div
-                    key={category}
-                    className="relative cursor-pointer select-none py-2 pl-3 pr-9 text-gray-900 hover:bg-gray-500 hover:text-white"
-                    onClick={() => handleClick2(category)}
-                    onClickCapture={() => modify(category)}
-                  >
-                    <div className="flex items-center">
-                      <span className="ml-3">{category}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
+
+          <div className="absolute inset-y-0 right-0 top-4 flex w-full items-center rounded-r-md px-2 focus:outline-none"></div>
+          {isVisible && (
+            <div className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              {category.map((category) => (
+                <div
+                  key={category}
+                  className="relative cursor-pointer select-none py-2 pl-3 pr-9 text-gray-900 hover:bg-zinc-200"
+                  onClick={() => handleClick2(category)}
+                  onClickCapture={() => modify(category)}
+                >
+                  <div className="flex items-center">
+                    <span className="ml-3">{category}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="mt-8 hidden justify-center gap-8  md:flex">

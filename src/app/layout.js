@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         />
       </head>
        {/* Render the children (content) */}
-      <body className={`${inter.className} `}>{children}</body>
+      <body className="font-inter">{children}</body>
     </html>
   );
 }

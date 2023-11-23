@@ -25,7 +25,7 @@ export default function Example({ onClose }) {
         });
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-10 backdrop-blur-lg bg-gray-251 will-change-visibility will-change-opacity  transition-all duration-200 ease-in-out overflow-auto  visible opacity-100">
+    <div className="fixed inset-0 flex items-center justify-center backdrop-blur-lg bg-gray-251 will-change-visibility will-change-opacity  transition-all duration-200 ease-in-out overflow-auto  visible opacity-100">
       <div className="modal-container w-3/4 justify-between rounded-md">
 
         <div className="relative mt-1">
@@ -37,9 +37,9 @@ export default function Example({ onClose }) {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
-          <MagnifyingGlassIcon className="absolute h-6 left-6 top-3 text-gray-400" />
+          <MagnifyingGlassIcon className="absolute h-5 left-5 top-3 text-gray-400" />
           {filteredLogos.length > 0 && (
-            <div className="absolute z-10 p-4 mt-4 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            <div className="absolute p-4 mt-4 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
               {filteredLogos.map((logo) => (
                 <div
                   key={logo.name}
